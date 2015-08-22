@@ -1,0 +1,12 @@
+diffing element \.\ccremoveprivate.txt
+0a1
+> Change using time filter.
+7a9,10
+> REM
+> 
+20c23,25
+< for /F %i IN ('cleartool lstype -kind -s') DO echo cleartool lock lbtype:"%i"
+---
+> for /F %i IN ('cleartool lstype -kind -s') DO echo c lock lbtype:"%i"
+> rEM TEST
+> REM ANT

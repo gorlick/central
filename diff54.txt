@@ -1,0 +1,8 @@
+diffing element \.\ccremoveprivate.txt
+1,3c1,2
+< ohy
+< Chage in 2nd stream
+< 
+---
+> lll
+> Change made in the first stream

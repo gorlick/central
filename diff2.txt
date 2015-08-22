@@ -1,0 +1,5 @@
+diffing element \.\ccremoveprivate.txt
+1c1
+< Change made in the first stream
+---
+> Change made in the threestream_gorlick workspace 1
