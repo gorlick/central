@@ -1,0 +1,12 @@
+Dim ReturnCode As Integer
+
+ReturnCode = MsgBox("The ITAO/ ITAO Delegate certifies and acknowledges that source code has been reviewed and to the best of their knowledge there is no " & vbCrLf & vbCrLf & "1) Malicious code" & vbCrLf & "2) Hard coded password" & vbCrLf & "3) Reviews are conducted against Trusted Baseline " & vbCrLf & "4) Reviews are conducted by an Independent Reviewer." & vbCrLf & "5) Source Code between Trusted and Current Baseline are the only changes being released to Production", vbOKCancel, "Source Code Certification")
+
+If ReturnCode = 1 Then
+    'Continue Processing
+    MsgBox "You do certify the source code and can proceed to export this report"
+Else
+    'Stop and Exit without performing any Actions
+    MsgBox "You do NOT certify the source code and cannot proceed to export this report"
+    Exit Sub
+End If

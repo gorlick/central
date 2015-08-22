@@ -1,0 +1,47 @@
+
+Function listUnique(rng As Range) As Variant
+    Dim row As Range
+    Dim elements() As String
+    Dim elementSize As Integer
+    Dim newElement As Boolean
+    Dim i As Integer
+    Dim distance As Integer
+    Dim result As String
+
+    elementSize = 0
+    newElement = True
+
+    For Each row In rng.Rows
+        If row.Value <> "" Then
+            newElement = True
+            For i = 1 To elementSize Step 1
+                If elements(i - 1) = row.Value Then
+                    newElement = False
+                End If
+            Next i
+            If newElement Then
+                elementSize = elementSize + 1
+                ReDim Preserve elements(elementSize - 1)
+                elements(elementSize - 1) = row.Value
+            End If
+        End If
+    Next
+
+    distance = Range(Application.Caller.Address).row - rng.row
+
+    If distance < elementSize Then
+        result = elements(distance)
+        listUnique = result
+    Else
+        listUnique = ""
+    End If
+End Function
+
+Usage
+Just enter =listUnique(range) to a cell. The only parameter is range that is an ordinary Excel range. For example: A$1:A$28 or H$8:H$30.
+
+Conditions
+•The range must be a column.
+•The first cell where you call the function must be in the same row where the range starts.
+Example
+Regular case
