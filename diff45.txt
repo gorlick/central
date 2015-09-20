@@ -10,3 +10,4 @@ diffing element \.\ccremoveprivate.txt
 > for /F %i IN ('cleartool lstype -kind -s') DO echo c lock lbtype:"%i"
 > rEM TEST
 > REM ANT
+change by gary o.
